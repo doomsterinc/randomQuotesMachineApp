@@ -1,7 +1,8 @@
 <!doctype>
 <html>
-    <head>
-        <!--
+
+<head>
+    <!--
         Customize this policy to fit your own app's needs. For more guidance, see:
             https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
         Some notes:
@@ -10,21 +11,31 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <title>Random Quote Machine</title>
-    </head>
-    <body>
-        <main class="app">
-            <section class="tollarea">
-                <blockquote class="quote">{{quote}}</blockquote>
-                <p class="author">{{author}}</p>
-                <button class="btn" onclick="twitterPublish">New Quote</button>
-                <button class="btn" onclick="newQuote">New Quote</button>
-            </section>
-        </main>
-    </body>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <title>Random Quote Machine</title>
+</head>
+
+<body>
+    <div class="quote-box">
+        <div class="quote-text">
+            <i class="fa fa-quote-left"> </i><span id="text"></span>
+        </div>
+        <div class="quote-author">
+            - <span id="author"></span>
+        </div>
+        <div class="buttons">
+            <a class="button" id="tweet-quote" title="Tweet this quote!" target="_blank">
+                <i class="fa fa-twitter"></i>
+            </a>
+            <button class="button" id="new-quote">New quote</button>
+        </div>
+    </div>
+    <div class="footer"> by <a href="">doomsterinc</a></div>
+
+</body>
+
 </html>
