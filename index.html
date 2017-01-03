@@ -11,31 +11,34 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
     <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <title>Random Quote Machine</title>
 </head>
 
 <body>
-    <div class="quote-box">
+    <main class="container" id="app">
+        <div class="jumbotron">
         <div class="quote-text">
-            <i class="fa fa-quote-left"> </i><span id="text"></span>
+            <i class="fa fa-quote-left">{{quote}} </i><span id="text"></span>
         </div>
         <div class="quote-author">
-            - <span id="author"></span>
+            - {{author}}<span id="author"></span>
         </div>
-        <div class="buttons">
-            <a class="button" id="tweet-quote" title="Tweet this quote!" target="_blank">
-                <i class="fa fa-twitter"></i>
+        <div>
+            <a class="btn btn-lg btn-info" id="tweet-quote" href="http://twitter.com" target="_blank">Twitter
             </a>
-            <button class="button" id="new-quote">New quote</button>
+            <button class="btn btn-lg btn-info" id="new-quote">New quote</button>
         </div>
-    </div>
+        </div>
     <div class="footer"> by <a href="">doomsterinc</a></div>
-
+    </main>
 </body>
 
 </html>
